@@ -17,8 +17,8 @@ dt = 1E-2;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Call Simulink Block Diagram%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-open_system('AE157Lab2task2.slx');
-ANSSTEP = sim('AE157Lab2task2.slx');
+open_system('Unit_Step_Response3B.slx');
+ANSSTEP = sim('Unit_Step_Response3B.slx');
 %%
 %%%%%%%%%%%%%%%%%%%%%
 %Plot UNIT STEP data%
@@ -26,14 +26,7 @@ ANSSTEP = sim('AE157Lab2task2.slx');
 hold all % This is so each plot is actually gets plotted instead of overriding each other. 
 
 figure (1);
-plot(ANSSTEP.Torque(:,1),ANSSTEP.Torque(:,2));
-title('Torque Response vs Time');
-xlabel('Time (s)');
-ylabel('Amplitude');
-
-hold on;
-figure (2);
-plot(ANSSTEP.Angle(:,1),ANSSTEP.Angle(:,2));
-title('Angular Response vs Time');
+plot(ANSSTEP.x1_unit(:,1),ANSSTEP.x1_unit(:,2));
+title('Unit-Step Response of the Control System');
 xlabel('Time (s)');
 ylabel('Amplitude');
